@@ -8,12 +8,18 @@
 
 import UIKit
 
+
 class MainVC: UIViewController {
 
-    @IBOutlet weak var weightTxt: WeightTxtField!
+    @IBOutlet weak var weightTxt: BMITxtField!
     
-    @IBOutlet weak var heightTxt: WeightTxtField!
+    @IBOutlet weak var heightTxt: BMITxtField!
+   
+    @IBOutlet weak var BMIResult: UILabel!
     
+    @IBOutlet weak var yourBMILbl: UILabel!
+    
+    @IBOutlet weak var resetBtn: UIButton!
    
     
     override func viewDidLoad() {
@@ -26,12 +32,40 @@ class MainVC: UIViewController {
         
         weightTxt.inputAccessoryView = calcBtn
         heightTxt.inputAccessoryView = calcBtn
+        
+        //add locale if statement for unit system
+        weightTxt.placeholder = nil
+        weightTxt.placeholder = "Weight in \("kg")"
+        
+        
+        heightTxt.placeholder = nil
+        heightTxt.placeholder = "Height in \("cm")"
+        
+        BMIResult.isHidden = true
+        yourBMILbl.isHidden = true
+        resetBtn.isHidden = true
+        
     }
 
     @objc func calculate(){
-
+        //weightTxt is not the same var as the IB varweightTxt
+        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
+            if let weight = Double(weightTxt), let height = Double(heightTxt) {
+            view.endEditing(true)
+            BMIResult.isHidden = false
+            yourBMILbl.isHidden = false
+            resetBtn.isHidden = false
+                BMIResult.text = "\(BMI.getBMI(forWeight: weight, andHeight: height))"
+            }
+        }
     }
-
-
+    
+    @IBAction func resetPressed(_ sender: Any) {
+        BMIResult.isHidden = true
+        yourBMILbl.isHidden = true
+        resetBtn.isHidden = true
+        weightTxt.text = ""
+        heightTxt.text = ""
+    }
 }
 
