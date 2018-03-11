@@ -35,11 +35,11 @@ class MainVC: UIViewController {
         
         //add locale if statement for unit system
         weightTxt.placeholder = nil
-        weightTxt.placeholder = "Weight in \("kg")"
+        weightTxt.placeholder = "Weight in \("lbs")"
         
         
         heightTxt.placeholder = nil
-        heightTxt.placeholder = "Height in \("cm")"
+        heightTxt.placeholder = "Height in \("inches")"
         
         BMIResult.isHidden = true
         yourBMILbl.isHidden = true
