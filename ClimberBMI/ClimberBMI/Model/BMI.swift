@@ -11,14 +11,13 @@ import Foundation
 //Number is rounded to one decimal
 //add functionality for imperial system
 
-let locale = Locale.current
-
 class BMI {
     class func getBMI(forWeight weight: Double, andHeight height: Double) -> Double {
         return (((weight / ((height * height))*703)) * 10).rounded() / 10
     }
     
 }
+
 
 
 // to calculate BMI in the metric system

@@ -5,27 +5,24 @@ import UIKit
 var str = "Hello, playground"
 print(str)
 
-let roundedValue1 = (0.6844 * 10).rounded() / 10
+let roundedValue1 = (height * weight).rounded() / 10
 let roundedValue2 = (0.6849 * 10).rounded() / 10
 print(roundedValue1) // returns 0.684
 print(roundedValue2) // returns 0.685
 
-var weight: Double = 33
-var height: Double = 100
+
 
 let answer: Double = ((height/weight)*100).rounded() / 100
 
-var locale = Locale.current
-static var = isoRegionCodes:
-var imperial =
-
-if locale == imperial {
-    print("same")
-}
-else {
-    print("not the same")
-}
+var height: Double = 70
+var weight: Double = 178
+var averageBMI: Double = 23
 
 
-    
+let poundsToLoose: Double = ((averageBMI/703*height*height-weight) * 10).rounded() / 10
+
+if 0 == 1 {1
+  
 }
+if 0 == 2 {2}
+else {3}

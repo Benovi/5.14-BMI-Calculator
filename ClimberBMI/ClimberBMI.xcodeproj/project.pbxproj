@@ -20,6 +20,7 @@
 		1216931D204F6E2F000924CF /* ClimberBMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169307204E57A0000924CF /* ClimberBMIUITests.swift */; };
 		1216931E204FA7E7000924CF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121692E9204E57A0000924CF /* MainVC.swift */; };
 		1216931F204FA7EF000924CF /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216931A204F6769000924CF /* BMI.swift */; };
+		121693232056002B000924CF /* BMIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121693222056002B000924CF /* BMIData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		12169309204E57A0000924CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12169317204E6DEC000924CF /* BMITxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMITxtField.swift; sourceTree = "<group>"; };
 		1216931A204F6769000924CF /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		121693222056002B000924CF /* BMIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1216931A204F6769000924CF /* BMI.swift */,
+				121693222056002B000924CF /* BMIData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				1216931B204F6769000924CF /* BMI.swift in Sources */,
 				121692EA204E57A0000924CF /* MainVC.swift in Sources */,
 				121692E8204E57A0000924CF /* AppDelegate.swift in Sources */,
+				121693232056002B000924CF /* BMIData.swift in Sources */,
 				12169318204E6DEC000924CF /* BMITxtField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

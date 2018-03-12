@@ -19,7 +19,18 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var yourBMILbl: UILabel!
     
+    @IBOutlet weak var compareLbl: UILabel!
+    
+    @IBOutlet weak var goalLbl: UILabel!
+    
+    @IBOutlet weak var lowGoal: UIButton!
+    
+    @IBOutlet weak var midGoal: UIButton!
+    
+    @IBOutlet weak var highGoal: UIButton!
+    
     @IBOutlet weak var resetBtn: UIButton!
+    
    
     
     override func viewDidLoad() {
@@ -33,7 +44,7 @@ class MainVC: UIViewController {
         weightTxt.inputAccessoryView = calcBtn
         heightTxt.inputAccessoryView = calcBtn
         
-        //add locale if statement for unit system
+        //Consider adding region if statement for unit system
         weightTxt.placeholder = nil
         weightTxt.placeholder = "Weight in \("lbs")"
         
@@ -44,28 +55,97 @@ class MainVC: UIViewController {
         BMIResult.isHidden = true
         yourBMILbl.isHidden = true
         resetBtn.isHidden = true
-        
+        compareLbl.isHidden = true
+        goalLbl.isHidden = true
+        lowGoal.isHidden = true
+        midGoal.isHidden = true
+        highGoal.isHidden = true
     }
 
     @objc func calculate(){
-        //weightTxt is not the same var as the IB varweightTxt
         if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
             if let weight = Double(weightTxt), let height = Double(heightTxt) {
             view.endEditing(true)
             BMIResult.isHidden = false
             yourBMILbl.isHidden = false
             resetBtn.isHidden = false
+            goalLbl.isHidden = false
+            lowGoal.isHidden = false
+            midGoal.isHidden = false
+            highGoal.isHidden = false
                 BMIResult.text = "\(BMI.getBMI(forWeight: weight, andHeight: height))"
+                
             }
         }
     }
+    
+     //Consider adding french grading system conversion for goal buttons according to region
+    
+    @IBAction func lowGoalPressed(_ sender: Any) {
+        compareLbl.isHidden = false
+        let averageBMI: Double = averageLowGoalBMI
+        //Consider simplifing weight and height
+        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
+            if let weight = Double(weightTxt), let height = Double(heightTxt) {
+                let poundsToLoose: Double = ((averageBMI/703*height*height-weight) * 10).rounded() / 10
+                if poundsToLoose > 0 {
+                    compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.12a climber"
+                }
+                else{
+                    compareLbl.text = "The average 5.12a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                }
+            }
+        }
+    }
+    
+    @IBAction func midGoalPressed(_ sender: Any) {
+        compareLbl.isHidden = false
+        let averageBMI: Double = averageMidGoalBMI
+         //Consider simplifing weight and height
+        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
+            if let weight = Double(weightTxt), let height = Double(heightTxt) {
+                let poundsToLoose: Double = ((averageBMI/703*height*height-weight) * 10).rounded() / 10
+                if poundsToLoose > 0 {
+                    compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.13a climber"
+                }
+                else{
+                    compareLbl.text = "The average 5.13a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func highGoalPressed(_ sender: Any) {
+        compareLbl.isHidden = false
+        let averageBMI: Double = averageHighGoalBMI
+         //Consider simplifing weight and height
+        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
+            if let weight = Double(weightTxt), let height = Double(heightTxt) {
+                let poundsToLoose: Double = ((averageBMI/703*height*height-weight) * 10).rounded() / 10
+                if poundsToLoose > 0 {
+                    compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.14a climber"
+                }
+                else{
+                    compareLbl.text = "The average 5.14a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                }
+            }
+        }
+    }
+    
     
     @IBAction func resetPressed(_ sender: Any) {
         BMIResult.isHidden = true
         yourBMILbl.isHidden = true
         resetBtn.isHidden = true
+        compareLbl.isHidden = true
+        goalLbl.isHidden = true
+        lowGoal.isHidden = true
+        midGoal.isHidden = true
+        highGoal.isHidden = true
         weightTxt.text = ""
         heightTxt.text = ""
     }
+    
 }
 
