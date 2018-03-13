@@ -8,8 +8,8 @@
 
 import Foundation
 
-//Number is rounded to one decimal
-//add functionality for imperial system
+
+//Consider adding functionality for imperial system
 
 class BMI {
     class func getBMI(forWeight weight: Double, andHeight height: Double) -> Double {

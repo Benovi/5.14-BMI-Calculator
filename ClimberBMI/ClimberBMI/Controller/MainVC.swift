@@ -8,6 +8,12 @@
 
 import UIKit
 
+//To do list
+//get data from 8a
+//test failed, fix, probably due to the fact the data is in another file
+//add sex distinction
+//spell check
+//double check numbers
 
 class MainVC: UIViewController {
 
@@ -83,7 +89,7 @@ class MainVC: UIViewController {
     
     @IBAction func lowGoalPressed(_ sender: Any) {
         compareLbl.isHidden = false
-        let averageBMI: Double = averageLowGoalBMI
+        let averageBMI: Double = 25.0
         //Consider simplifing weight and height
         if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
             if let weight = Double(weightTxt), let height = Double(heightTxt) {
@@ -92,7 +98,7 @@ class MainVC: UIViewController {
                     compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.12a climber"
                 }
                 else{
-                    compareLbl.text = "The average 5.12a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                    compareLbl.text = "The average 5.12a climber has a BMI below \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
                 }
             }
         }
@@ -100,7 +106,7 @@ class MainVC: UIViewController {
     
     @IBAction func midGoalPressed(_ sender: Any) {
         compareLbl.isHidden = false
-        let averageBMI: Double = averageMidGoalBMI
+        let averageBMI: Double = 22.5
          //Consider simplifing weight and height
         if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
             if let weight = Double(weightTxt), let height = Double(heightTxt) {
@@ -109,7 +115,7 @@ class MainVC: UIViewController {
                     compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.13a climber"
                 }
                 else{
-                    compareLbl.text = "The average 5.13a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                    compareLbl.text = "The average 5.13a climber has a BMI below \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
                 }
             }
         }
@@ -118,7 +124,7 @@ class MainVC: UIViewController {
     
     @IBAction func highGoalPressed(_ sender: Any) {
         compareLbl.isHidden = false
-        let averageBMI: Double = averageHighGoalBMI
+        let averageBMI: Double = 21.5
          //Consider simplifing weight and height
         if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
             if let weight = Double(weightTxt), let height = Double(heightTxt) {
@@ -127,7 +133,7 @@ class MainVC: UIViewController {
                     compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.14a climber"
                 }
                 else{
-                    compareLbl.text = "The average 5.14a climber has a BMI of \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
+                    compareLbl.text = "The average 5.14a climber has a BMI below \(averageBMI). Consider losing \(poundsToLoose * -1) lbs in addition to your normal training program to reach your goal"
                 }
             }
         }
