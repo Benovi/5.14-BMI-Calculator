@@ -8,10 +8,8 @@
 
 import Foundation
 
-//get actual data add distinction between women and men
-//let averageLowGoalBMI: Double = 24.0
-//let averageMidGoalBMI: Double = 23.0
-//let averageHighGoalBMI: Double = 22.0
+//Consider collecting user actual data of women and men
+
 
 
 

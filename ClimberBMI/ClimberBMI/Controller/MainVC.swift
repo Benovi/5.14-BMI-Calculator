@@ -8,13 +8,6 @@
 
 import UIKit
 
-//To do list
-//get data from 8a
-//test failed, fix, probably due to the fact the data is in another file
-//add sex distinction
-//spell check
-//double check numbers
-
 class MainVC: UIViewController {
 
     @IBOutlet weak var weightTxt: BMITxtField!
@@ -37,7 +30,6 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var resetBtn: UIButton!
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +58,10 @@ class MainVC: UIViewController {
         lowGoal.isHidden = true
         midGoal.isHidden = true
         highGoal.isHidden = true
+            
+        
     }
+    
 
     @objc func calculate(){
         if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
@@ -80,19 +75,19 @@ class MainVC: UIViewController {
             midGoal.isHidden = false
             highGoal.isHidden = false
                 BMIResult.text = "\(BMI.getBMI(forWeight: weight, andHeight: height))"
-                
+            
             }
         }
     }
     
      //Consider adding french grading system conversion for goal buttons according to region
+    //Fix func move to model and unit test
     
     @IBAction func lowGoalPressed(_ sender: Any) {
         compareLbl.isHidden = false
         let averageBMI: Double = 25.0
-        //Consider simplifing weight and height
-        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text {
-            if let weight = Double(weightTxt), let height = Double(heightTxt) {
+        if let weightTxt = weightTxt.text, let heightTxt = heightTxt.text,
+            let weight = Double(weightTxt), let height = Double(heightTxt) {
                 let poundsToLoose: Double = ((averageBMI/703*height*height-weight) * 10).rounded() / 10
                 if poundsToLoose > 0 {
                     compareLbl.text = "Good work! You are below the average BMI of \(averageBMI) for a 5.12a climber"
@@ -102,7 +97,7 @@ class MainVC: UIViewController {
                 }
             }
         }
-    }
+    
     
     @IBAction func midGoalPressed(_ sender: Any) {
         compareLbl.isHidden = false
