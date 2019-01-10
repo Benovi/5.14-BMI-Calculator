@@ -21,6 +21,20 @@ class ClimberBMITests: XCTestCase {
         super.tearDown()
     }
     
+    
+    func testGetBMI() {
+        
+        //metric test
+        //XCTAssert(BMI.getBMI(forWeight: 81, andHeight: 180) == 25)
+        //XCTAssert(BMI.getBMI(forWeight: 75, andHeight: 200) == 18.8)
+        //XCTAssert(BMI.getBMI(forWeight: 75.50, andHeight: 230) == 14.3)
+        
+        //imperial test
+        XCTAssert(BMI.getBMI(forWeight: 178, andHeight: 70) == 25.5)
+        XCTAssert(BMI.getBMI(forWeight: 160, andHeight: 70) == 23.0)
+        XCTAssert(BMI.getBMI(forWeight: 155, andHeight: 70) == 22.2)
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

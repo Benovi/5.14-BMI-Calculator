@@ -14,7 +14,13 @@
 		121692F2204E57A0000924CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121692F0204E57A0000924CF /* LaunchScreen.storyboard */; };
 		121692FD204E57A0000924CF /* ClimberBMITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121692FC204E57A0000924CF /* ClimberBMITests.swift */; };
 		12169308204E57A0000924CF /* ClimberBMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169307204E57A0000924CF /* ClimberBMIUITests.swift */; };
-		12169318204E6DEC000924CF /* WeightTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169317204E6DEC000924CF /* WeightTxtField.swift */; };
+		12169318204E6DEC000924CF /* BMITxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169317204E6DEC000924CF /* BMITxtField.swift */; };
+		1216931B204F6769000924CF /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216931A204F6769000924CF /* BMI.swift */; };
+		1216931C204F6DFA000924CF /* BMITxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169317204E6DEC000924CF /* BMITxtField.swift */; };
+		1216931D204F6E2F000924CF /* ClimberBMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12169307204E57A0000924CF /* ClimberBMIUITests.swift */; };
+		1216931E204FA7E7000924CF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121692E9204E57A0000924CF /* MainVC.swift */; };
+		1216931F204FA7EF000924CF /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216931A204F6769000924CF /* BMI.swift */; };
+		121693232056002B000924CF /* BMIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121693222056002B000924CF /* BMIData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +54,9 @@
 		12169303204E57A0000924CF /* ClimberBMIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimberBMIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12169307204E57A0000924CF /* ClimberBMIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimberBMIUITests.swift; sourceTree = "<group>"; };
 		12169309204E57A0000924CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12169317204E6DEC000924CF /* WeightTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTxtField.swift; sourceTree = "<group>"; };
+		12169317204E6DEC000924CF /* BMITxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMITxtField.swift; sourceTree = "<group>"; };
+		1216931A204F6769000924CF /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		121693222056002B000924CF /* BMIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		121692E6204E57A0000924CF /* ClimberBMI */ = {
 			isa = PBXGroup;
 			children = (
+				12169319204F6731000924CF /* Model */,
 				12169316204E6D7B000924CF /* Views */,
 				12169315204E6C7A000924CF /* Controller */,
 				121692E7204E57A0000924CF /* AppDelegate.swift */,
@@ -139,9 +148,18 @@
 		12169316204E6D7B000924CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				12169317204E6DEC000924CF /* WeightTxtField.swift */,
+				12169317204E6DEC000924CF /* BMITxtField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		12169319204F6731000924CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1216931A204F6769000924CF /* BMI.swift */,
+				121693222056002B000924CF /* BMIData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1216931B204F6769000924CF /* BMI.swift in Sources */,
 				121692EA204E57A0000924CF /* MainVC.swift in Sources */,
 				121692E8204E57A0000924CF /* AppDelegate.swift in Sources */,
-				12169318204E6DEC000924CF /* WeightTxtField.swift in Sources */,
+				121693232056002B000924CF /* BMIData.swift in Sources */,
+				12169318204E6DEC000924CF /* BMITxtField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1216931F204FA7EF000924CF /* BMI.swift in Sources */,
 				121692FD204E57A0000924CF /* ClimberBMITests.swift in Sources */,
+				1216931E204FA7E7000924CF /* MainVC.swift in Sources */,
+				1216931D204F6E2F000924CF /* ClimberBMIUITests.swift in Sources */,
+				1216931C204F6DFA000924CF /* BMITxtField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
